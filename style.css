@@ -198,33 +198,38 @@ body{
 
 .ring-photo{
   position:absolute;
-  left: 60px;
-  top: 35px;
-  width: 230px;
-  height: 230px;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 260px;
+  height: 260px;
   border-radius: 50%;
   overflow:hidden;
   background: rgba(0,0,0,0.25);
-  border: 4px solid rgba(37,99,235,0.95);
-  box-shadow: 0 0 0 10px rgba(37,99,235,0.20), 0 26px 70px rgba(0,0,0,0.55);
 }
+
+/* Glowing animated ring */
+.glow-ring {
+  border: 4px solid transparent;
+  background:
+    linear-gradient(#0b1220, #0b1220) padding-box,
+    linear-gradient(120deg, #7c3aed, #2563eb, #22d3ee) border-box;
+  animation: glowRotate 6s linear infinite;
+  box-shadow:
+    0 0 25px rgba(124,58,237,0.6),
+    0 0 60px rgba(37,99,235,0.35);
+}
+
+@keyframes glowRotate {
+  0% { filter: hue-rotate(0deg); }
+  100% { filter: hue-rotate(360deg); }
+}
+
 .ring-photo img{
   width:100%;
   height:100%;
   object-fit: cover;
   object-position: top center;
-}
-
-.ring-deco{
-  position:absolute;
-  right: 10px;
-  top: 10px;
-  width: 280px;
-  height: 280px;
-  border-radius: 50%;
-  background: radial-gradient(circle at 30% 30%, rgba(37,99,235,0.95), rgba(37,99,235,0.55));
-  box-shadow: 0 0 0 12px rgba(37,99,235,0.18), 0 30px 90px rgba(0,0,0,0.55);
-  filter: saturate(1.2);
 }
 
 /* ===== Mini card ===== */
