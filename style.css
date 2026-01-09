@@ -254,47 +254,6 @@ body{
   50%{ transform: scale(1.04); opacity: 0.85; }
 }
 
-
-
-.rings{
-  position: relative;
-  width: 520px;
-  height: 320px;
-  display: block;
-}
-
-
-.ring-photo{
-  position:absolute;
-  left: 60px;
-  top: 35px;
-  width: 230px;
-  height: 230px;
-  border-radius: 50%;
-  overflow:hidden;
-  background: rgba(0,0,0,0.25);
-  border: 4px solid rgba(37,99,235,0.95);
-  box-shadow: 0 0 0 10px rgba(37,99,235,0.20), 0 26px 70px rgba(0,0,0,0.55);
-}
-.ring-photo img{
-  width:100%;
-  height:100%;
-  object-fit: cover;
-  object-position: top center;
-}
-
-.ring-deco{
-  position:absolute;
-  right: 10px;
-  top: 10px;
-  width: 280px;
-  height: 280px;
-  border-radius: 50%;
-  background: radial-gradient(circle at 30% 30%, rgba(37,99,235,0.95), rgba(37,99,235,0.55));
-  box-shadow: 0 0 0 12px rgba(37,99,235,0.18), 0 30px 90px rgba(0,0,0,0.55);
-  filter: saturate(1.2);
-}
-
 /* ===== Mini card ===== */
 .mini-card{
   width: 240px;
