@@ -256,40 +256,67 @@
       </div>
     </section>
 
-    <!-- CONTACT -->
-    <section id="contact" class="section">
-      <div class="section-title">
-        <h2>Get In Touch</h2>
-        <p>Let’s connect</p>
-      </div>
+<section id="contact" class="section contact-section">
+  <div class="contact-head">
+    <h2>Get In Touch</h2>
+    <p>Let's discuss about how we can collaborate and help each other</p>
+  </div>
 
-      <div class="grid-2">
-        <div class="card">
-          <h3>Email</h3>
-          <p><a href="mailto:tj261998@gmail.com">tj261998@gmail.com</a></p>
-        </div>
-
-        <div class="card">
-          <h3>Phone</h3>
-          <p class="muted">(+49) 1784781318</p>
-        </div>
-
-        <div class="card">
-          <h3>LinkedIn</h3>
-          <p><a href="https://www.linkedin.com/in/tahmid-jawad/" target="_blank" rel="noreferrer">linkedin.com/in/tahmid-jawad</a></p>
-        </div>
-
-        <div class="card">
-          <h3>Location</h3>
-          <p class="muted">Duisburg, Germany</p>
+  <div class="contact-wrap">
+    <!-- LEFT CARDS -->
+    <div class="contact-left">
+      <div class="c-card">
+        <div class="c-ico">✉️</div>
+        <div class="c-txt">
+          <div class="c-title">Email</div>
+          <div class="c-value">tj261998@gmail.com</div>
         </div>
       </div>
 
-      <footer class="footer">
-        © <span id="year"></span> Tahmid Jawad. All rights reserved.
-      </footer>
-    </section>
-  </main>
+      <div class="c-card">
+        <div class="c-ico">📞</div>
+        <div class="c-txt">
+          <div class="c-title">Phone</div>
+          <div class="c-value">+49 178 4781318</div>
+        </div>
+      </div>
+
+      <div class="c-card">
+        <div class="c-ico">📍</div>
+        <div class="c-txt">
+          <div class="c-title">Location</div>
+          <div class="c-value">Duisburg, Germany</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- RIGHT FORM -->
+    <form class="contact-right"
+          action="mailto:tj261998@gmail.com"
+          method="post"
+          enctype="text/plain">
+
+      <input name="name" type="text" placeholder="Your Name" required>
+      <input name="email" type="email" placeholder="Your Email" required>
+      <input name="subject" type="text" placeholder="Subject" required>
+      <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+
+      <button class="send-btn" type="submit">Send Message</button>
+    </form>
+  </div>
+
+  <!-- FOOTER BAR like screenshot -->
+  <div class="contact-footer">
+    <div class="foot-left">© <span id="year"></span> Tahmid Jawad. All rights reserved.</div>
+
+    <div class="foot-right">
+      <a class="foot-social" href="mailto:tj261998@gmail.com" title="Email">✉️</a>
+      <a class="foot-social" href="https://www.linkedin.com/in/tahmid-jawad/" target="_blank" rel="noreferrer" title="LinkedIn">in</a>
+      <a class="foot-social" href="https://github.com/Tahmidjawad" target="_blank" rel="noreferrer" title="GitHub">⌂</a>
+    </div>
+  </div>
+</section>
+
 
   <script>
     document.getElementById("year").textContent = new Date().getFullYear();
