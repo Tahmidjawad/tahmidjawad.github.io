@@ -334,10 +334,12 @@ body{
 
 /* ===== Cards/Grids ===== */
 .card{
-  background: var(--card);
-  border: 1px solid rgba(255,255,255,0.10);
-  border-radius: 16px;
-  padding: 18px;
+  transition: transform .12s ease, border-color .12s ease, background .12s ease;
+}
+.card:hover{
+  transform: translateY(-2px);
+  border-color: rgba(37,99,235,0.35);
+  background: rgba(255,255,255,0.07);
 }
 
 .grid-2{
