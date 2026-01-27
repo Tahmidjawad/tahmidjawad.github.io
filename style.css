@@ -1,12 +1,12 @@
 /* ===== Reset ===== */
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+
 img{
   max-width: 100%;
   height: auto;
   display: block;
 }
-
-*{margin:0;padding:0;box-sizing:border-box;}
-html{scroll-behavior:smooth;}
 
 :root{
   --bg:#0b1220;
@@ -16,6 +16,7 @@ html{scroll-behavior:smooth;}
   --muted:rgba(229,231,235,0.70);
   --accent:#2563eb;
   --accent2:#7c3aed;
+  --cyan:#22d3ee;
 }
 
 /* ===== Body ===== */
@@ -51,6 +52,7 @@ body{
   font-weight: 800;
   color: var(--text);
   text-decoration:none;
+  white-space: nowrap;
 }
 .nav-links{
   display:flex;
@@ -79,7 +81,7 @@ body{
   padding: 28px 18px 60px;
 }
 
-/* ===== HERO (BIGGER like example) ===== */
+/* ===== HERO ===== */
 .hero{
   min-height: calc(100vh - 70px);
   display:grid;
@@ -144,6 +146,7 @@ body{
   text-decoration:none;
   font-weight: 700;
   border: 1px solid rgba(255,255,255,0.14);
+  transition: transform .12s ease, filter .12s ease;
 }
 .btn.primary{
   background: linear-gradient(90deg, rgba(124,58,237,0.95), rgba(37,99,235,0.95));
@@ -155,6 +158,7 @@ body{
   color: var(--text);
 }
 .btn.full{width:100%; text-align:center;}
+.btn:hover{ transform: translateY(-1px); }
 
 .social-row{
   margin-top: 18px;
@@ -173,13 +177,15 @@ body{
   background: rgba(255,255,255,0.07);
   border: 1px solid rgba(255,255,255,0.10);
   font-weight: 800;
+  transition: transform .12s ease, border-color .12s ease, background .12s ease;
 }
 .social:hover{
   border-color: rgba(37,99,235,0.55);
   transform: translateY(-1px);
+  background: rgba(255,255,255,0.09);
 }
 
-/* ===== Right side rings like example ===== */
+/* ===== Right side rings ===== */
 .hero-right{
   display:flex;
   flex-direction:column;
@@ -204,21 +210,20 @@ body{
 /* Animated glowing border ring */
 .ring-border{
   position: absolute;
-  width: 100%;
-  height: 100%;
+  inset: 0;
   border-radius: 50%;
   background: conic-gradient(
-    #7c3aed,
-    #2563eb,
-    #22d3ee,
-    #7c3aed
+    var(--accent2),
+    var(--accent),
+    var(--cyan),
+    var(--accent2)
   );
   filter: blur(6px);
   animation: spin 6s linear infinite;
   opacity: 0.9;
 }
 
-/* Clean photo container */
+/* Photo container */
 .ring-photo{
   position: relative;
   width: 280px;
@@ -227,10 +232,10 @@ body{
   overflow: hidden;
   background: #000;
   z-index: 2;
-  border: 6px solid #0b1220;
+  border: 6px solid var(--bg);
 }
 
-/* Photo itself — NO glow */
+/* Photo itself */
 .ring-photo img{
   width: 100%;
   height: 100%;
@@ -240,29 +245,9 @@ body{
   box-shadow: none;
 }
 
-/* Glowing animated ring */
-.glow-ring {
-  border: 4px solid transparent;
-  background:
-    linear-gradient(#0b1220, #0b1220) padding-box,
-    linear-gradient(120deg, #7c3aed, #2563eb, #22d3ee) border-box;
-  animation: glowRotate 6s linear infinite;
-  box-shadow:
-    0 0 25px rgba(124,58,237,0.6),
-    0 0 60px rgba(37,99,235,0.35);
-}
-
 @keyframes spin {
   from { transform: rotate(0deg); }
   to   { transform: rotate(360deg); }
-}
-
-
-.ring-photo img{
-  width:100%;
-  height:100%;
-  object-fit: cover;
-  object-position: top center;
 }
 
 /* ===== Mini card ===== */
@@ -278,7 +263,7 @@ body{
 
 /* ===== Sections ===== */
 .section{
-  padding-top: 90px;            /* keeps section below sticky nav */
+  padding-top: 90px;
   margin-top: -90px;
 }
 .section-title{
@@ -298,6 +283,7 @@ body{
   border-radius: 16px;
   padding: 18px;
 }
+
 .grid-2{
   display:grid;
   grid-template-columns: 1fr 1fr;
@@ -309,6 +295,7 @@ body{
   grid-template-columns: repeat(3, 1fr);
   gap: 14px;
 }
+
 .item{ margin-top: 14px; }
 .item:first-child{ margin-top: 0; }
 .item-head{
@@ -433,15 +420,19 @@ body{
 
 /* ===== Responsive ===== */
 @media (max-width: 1060px){
-  .hero{ grid-template-columns: 1fr; }
-  .rings{ width: 100%; max-width: 520px; }
+  .hero{
+    grid-template-columns: 1fr;
+    min-height: auto;
+    padding-top: 18px;
+  }
+  .hero-right{ margin-top: 10px; }
 }
+
 @media (max-width: 980px){
   .grid-3{ grid-template-columns: 1fr; }
   .grid-2{ grid-template-columns: 1fr; }
   .contact-grid{ grid-template-columns: 1fr; }
   .hero-title{ font-size: 2.6rem; }
-  .rings{ height: 290px; }
-  .ring-deco{ width: 230px; height: 230px; right: 0; }
-  .ring-photo{ width: 200px; height: 200px; left: 10px; }
+  .ring-wrapper{ width: 260px; height: 260px; }
+  .ring-photo{ width: 220px; height: 220px; }
 }
