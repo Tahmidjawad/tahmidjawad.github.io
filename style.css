@@ -73,7 +73,17 @@ body{
   background: rgba(255,255,255,0.06);
   border-color: rgba(255,255,255,0.08);
 }
+/* ===== Education alignment ===== */
+.edu-head{
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 12px;
+  align-items: baseline;
+}
 
+.edu-note{
+  margin-top: 6px;
+}
 /* ===== Layout ===== */
 .container{
   max-width: 1180px;
