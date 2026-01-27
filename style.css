@@ -81,6 +81,47 @@ body{
   padding: 28px 18px 60px;
 }
 
+/* ===== Experience split layout ===== */
+.exp-grid{
+  margin-top: 14px;
+  display: grid;
+  grid-template-columns: 0.95fr 1.25fr;
+  gap: 16px;
+  align-items: start;
+}
+
+.exp-col{
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 16px;
+  padding: 14px;
+}
+
+.exp-title{
+  font-size: 1rem;
+  font-weight: 800;
+  margin-bottom: 8px;
+}
+
+/* Focus the highlights column */
+.exp-focus{
+  border-color: rgba(37,99,235,0.35);
+  background: linear-gradient(
+    180deg,
+    rgba(37,99,235,0.10),
+    rgba(255,255,255,0.03)
+  );
+}
+
+.exp-focus .exp-title{
+  color: rgba(229,231,235,0.95);
+}
+
+.exp-col .bullets{
+  margin-top: 8px;
+}
+
+
 /* ===== HERO ===== */
 .hero{
   min-height: calc(100vh - 70px);
