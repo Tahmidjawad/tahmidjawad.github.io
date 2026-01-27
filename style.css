@@ -318,14 +318,29 @@ body{
 .mini-text{ font-weight: 800; }
 
 /* ===== Sections ===== */
+/* Stronger section separation */
 .section{
-  padding-top: 90px;
-  margin-top: -90px;
+  padding-top: 92px;
+  margin-top: -92px;
+  padding-bottom: 26px;
 }
-.section-title{
-  padding-bottom: 10px;
-  border-bottom: 1px solid rgba(255,255,255,0.08);
+
+/* Wrap each section content in a soft panel */
+.section .section-title{
+  margin: 0 0 14px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid rgba(255,255,255,0.10);
 }
+
+/* Optional: add a “panel” feel to each section */
+.section::before{
+  content:"";
+  display:block;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.14), transparent);
+  margin: 18px 0 18px;
+}
+
 .section-title h2{
   font-size: 1.7rem;
   margin-bottom: 6px;
